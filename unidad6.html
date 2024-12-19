@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Métodos de Ordenamiento</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4fff4;
+            color: #064d06;
+            padding: 20px;
+        }
+        .recuadro {
+            border: 2px solid #064d06;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #e8ffe8;
+        }
+        h1, h2 {
+            color: #064d06;
+        }
+        code {
+            background-color: #d8ffd8;
+            padding: 5px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Métodos de Ordenamiento</h1>
+
+<div class="recuadro">
+    <h2>6.1 - Ordenamiento por Burbuja</h2>
+    <p>El método de ordenamiento por burbuja compara pares de elementos adyacentes y los intercambia si están en el orden incorrecto.</p>
+    <p><strong>Ejemplo:</strong></p>
+    <code>
+        Lista original: [5, 2, 9, 1] <br>
+        Paso 1: [2, 5, 1, 9] <br>
+        Paso 2: [2, 1, 5, 9] <br>
+        Paso 3: [1, 2, 5, 9] (Lista ordenada)
+    </code>
+</div>
+
+<div class="recuadro">
+    <h2>6.2 - Ordenamiento por Selección</h2>
+    <p>El ordenamiento por selección encuentra el elemento más pequeño y lo coloca en la primera posición, luego repite el proceso con el resto de la lista.</p>
+    <p><strong>Ejemplo:</strong></p>
+    <code>
+        Lista original: [5, 2, 9, 1] <br>
+        Paso 1: [1, 2, 9, 5] (1 es el menor) <br>
+        Paso 2: [1, 2, 9, 5] (2 ya está en su lugar) <br>
+        Paso 3: [1, 2, 5, 9] (5 es el siguiente menor)
+    </code>
+</div>
+
+<div class="recuadro">
+    <h2>6.3 - Ordenamiento por Inserción</h2>
+    <p>El ordenamiento por inserción toma elementos de la lista y los inserta en su posición correcta en una lista ya ordenada.</p>
+    <p><strong>Ejemplo:</strong></p>
+    <code>
+        Lista original: [5, 2, 9, 1] <br>
+        Paso 1: [2, 5, 9, 1] (Se inserta 2 antes de 5) <br>
+        Paso 2: [2, 5, 9, 1] (9 ya está en su lugar) <br>
+        Paso 3: [1, 2, 5, 9] (Se inserta 1 al inicio)
+    </code>
+</div>
+
+</body>
+</html>

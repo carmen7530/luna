@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 2 - Recursividad</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4fff4;
+            color: #064d06;
+            padding: 20px;
+        }
+        .centrado {
+            text-align: center;
+        }
+        .justificado {
+            text-align: justify;
+            margin: 30px;
+            font-size: 20px;
+            line-height: 1.5;
+        }
+        .recuadro {
+            border: 2px solid #064d06;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #e8ffe8;
+        }
+        code, pre {
+            background-color: #d8ffd8;
+            padding: 10px;
+            display: block;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        a {
+            color: #064d06;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="centrado">Unidad 2 - Recursividad</h1>
+
+    <div class="recuadro">
+        <h2>2.1 Definición</h2>
+        <p class="justificado">La recursividad es un concepto que se indica cuando un método se llama a sí mismo.<br>
+        Cuando creamos un método recursivo, debemos asegurarnos de que termine, lo que implica definir una condición base para evitar llamadas infinitas.</p>
+        <img src="imagen1.jpg" alt="Imagen local" width="500">
+        <p class="justificado">Si no se controla adecuadamente, las llamadas recursivas pueden consumir toda la memoria y hacer que el programa se rompa.</p>
+    </div>
+
+    <div class="recuadro">
+        <h2>2.2 Procedimientos Recursivos</h2>
+        <p class="justificado">Un procedimiento activo que se invoca a sí mismo o desde otro procedimiento activo es un procedimiento recursivo. Esta acción se denomina recursión.<br>
+        Los procedimientos recursivos deben declararse con el atributo <code>RECURSIVE</code> y contar con un límite para evitar desbordamientos de memoria debido a llamadas infinitas.</p>
+    </div>
+
+    <div class="recuadro">
+        <h2>2.3 Ejemplos de Casos Recursivos</h2>
+        <ul class="justificado">
+            <li>Los números naturales se pueden definir de la siguiente forma: 0 es un número natural y el sucesor de un número natural es también un número natural.</li><br>
+            <li>El factorial de un número natural <em>n</em> es 1 si dicho número es 0, o <em>n</em> multiplicado por el factorial de <em>n-1</em> en caso contrario.</li><br>
+            <li>La <em>n</em>-ésima potencia de un número <em>x</em> es 1 si <em>n</em> es igual a 0, o el producto de <em>x</em> por la potencia <em>(n-1)</em>-ésima de <em>x</em> cuando <em>n</em> es mayor que 0.</li>
+        </ul>
+    </div>
+
+    <div class="recuadro">
+        <h2>Ejemplo: Factorial de un Número</h2>
+        <pre>
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class FactorialDinamico {
+
+    // Mapa para almacenar resultados calculados
+    private static HashMap<Integer, Integer> memo = new HashMap<>();
+
+    // Método recursivo con memorización
+    public static int factorial(int n) {
+        if (n <= 1) {  // Caso base
+            return 1;
+        }
+        // Verificar si ya está calculado
+        if (memo.containsKey(n)) {
+            return memo.get(n);
+        }
+        // Calcular y almacenar en el mapa
+        int resultado = n * factorial(n - 1);
+        memo.put(n, resultado);
+        return resultado;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingrese un número para calcular su factorial: ");
+        int numero = scanner.nextInt();
+
+        if (numero < 0) {
+            System.out.println("El factorial no está definido para números negativos.");
+        } else {
+            int resultado = factorial(numero);
+            System.out.println("El factorial de " + numero + " es: " + resultado);
+        }
+        scanner.close();
+    }
+}
+        </pre>
+    </div>
+
+    <h2>Resultado del Ejemplo:</h2>
+    <img src="Captura.png" alt="Imagen local" width="500"><br>
+    <a href="index.html">Volver al inicio</a>
+</body>
+</html>
